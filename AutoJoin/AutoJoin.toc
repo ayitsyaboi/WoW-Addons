@@ -1,0 +1,5 @@
+## Interface: 11200
+## Title: AutoJoin
+## Notes: Automatically joins saved chat channels on login
+## Version: 1.0
+AutoJoin.lua
