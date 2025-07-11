@@ -24,7 +24,7 @@ end
 -- Help message
 local function PrintHelp()
     DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99AutoJoin|r Commands:")
-    DEFAULT_CHAT_FRAME:AddMessage("  /aj join <channel>   - Add a channel to auto-join")
+    DEFAULT_CHAT_FRAME:AddMessage("  /aj add <channel>   - Add a channel to auto-join")
     DEFAULT_CHAT_FRAME:AddMessage("  /aj remove <channel> - Remove a channel from auto-join")
     DEFAULT_CHAT_FRAME:AddMessage("  /aj list             - List all auto-join channels")
 end
@@ -40,7 +40,7 @@ SlashCmdList["AUTOJOIN"] = function(msg)
     local _, _, cmd, rest = string.find(msg, "^(%S+)%s*(.*)$")
     if cmd then cmd = string.lower(cmd) end
 
-    if cmd == "join" or cmd == "add" then
+    if cmd == "join" or cmd == "j" or cmd == "add" cmd == "a" then
         if rest ~= "" then
             AutoJoinDB[rest] = true
             DEFAULT_CHAT_FRAME:AddMessage("AutoJoin: Added |cff00ff00" .. rest .. "|r to auto-join list.")
