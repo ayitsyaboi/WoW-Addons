@@ -40,7 +40,7 @@ SlashCmdList["AUTOJOIN"] = function(msg)
     local _, _, cmd, rest = string.find(msg, "^(%S+)%s*(.*)$")
     if cmd then cmd = string.lower(cmd) end
 
-    if cmd == "join" or cmd == "j" or cmd == "add" cmd == "a" then
+    if cmd == "join" or cmd == "j" or cmd == "add" or cmd == "a" then
         if rest ~= "" then
             AutoJoinDB[rest] = true
             DEFAULT_CHAT_FRAME:AddMessage("AutoJoin: Added |cff00ff00" .. rest .. "|r to auto-join list.")
